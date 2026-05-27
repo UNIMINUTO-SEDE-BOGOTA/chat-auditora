@@ -300,3 +300,69 @@
   0%, 60%, 100% { transform: translateY(0); }
   30%            { transform: translateY(-6px); }
 }
+
+
+
+/* ============================================
+   Estilos para el indicador de análisis (loading)
+   ============================================ */
+
+/* Contenedor del mensaje de análisis */
+.blinking-message {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Texto que parpadea suavemente */
+.blinking-text {
+  animation: subtle-pulse 1.5s ease-in-out infinite;
+}
+
+/* Puntos que se mueven */
+.blinking-dots {
+  animation: dots-pulse 1.5s ease-in-out infinite;
+  font-weight: bold;
+}
+
+/* Animación de pulso suave para el texto */
+@keyframes subtle-pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 2px rgba(74, 144, 226, 0.3);
+  }
+}
+
+/* Animación de rebote para los puntos */
+@keyframes dots-pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
+/* Efecto de "respiración" para el contenedor del mensaje */
+#typingIndicator .message-content {
+  animation: gentle-breathing 2s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+/* Animación de respiración suave */
+@keyframes gentle-breathing {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.01);
+  }
+}
+

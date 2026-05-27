@@ -16,7 +16,7 @@ export function scrollToBottom(containerId = 'messagesContainer'): void {
   });
 }
 
-// ── Typing indicator ──────────────────────────────────────────
+// ── Typing indicator (NUEVO VERSIÓN CON MENSAJE PESTAÑEANTE) ──────────────────────────────────────────
 
 export function showTypingIndicator(avatarSrc = '/icon-ava.png'): void {
   const container = document.getElementById('messagesContainer');
@@ -30,10 +30,9 @@ export function showTypingIndicator(avatarSrc = '/icon-ava.png'): void {
     <div class="message-body">
       <div class="message-label">Asistente</div>
       <div class="message-content">
-        <div class="typing-indicator">
-          <div class="typing-dot"></div>
-          <div class="typing-dot"></div>
-          <div class="typing-dot"></div>
+        <div class="blinking-message">
+          <span class="blinking-text">Procesando..</span>
+          <span class="blinking-dots">...</span>
         </div>
       </div>
     </div>`;

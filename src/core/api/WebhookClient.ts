@@ -4,7 +4,7 @@
 // Reutilizable por cualquier servicio.
 // ============================================================
 
-const REQUEST_TIMEOUT_MS = 60_000;
+const REQUEST_TIMEOUT_MS = 300_000;
 
 export interface WebhookPayload {
   message: string;
@@ -125,7 +125,7 @@ export function extractReply(data: WebhookResponse | string | unknown): string {
 
 function buildErrorMessage(error: unknown): string {
   if ((error as Error)?.name === 'AbortError') {
-    return 'AVA está procesando una consulta compleja. Por favor intenta de nuevo en unos segundos.';
+    return '⏰ La consulta está tomando más de 5 minutos. Por favor, intenta con una pregunta más específica.';
   }
   if ((error as Error)?.message?.includes('HTTP 5')) {
     return 'El servidor tuvo un problema temporal. Por favor intenta de nuevo.';
