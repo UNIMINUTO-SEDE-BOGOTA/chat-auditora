@@ -50,11 +50,10 @@ export function renderAvaWelcomeCards(): string {
       <span class="icon">🧠</span>
       Capacitación SGC en UNIMINUTO
     </button>
-    <button class="category-btn category-btn-disabled" disabled aria-disabled="true" title="Temporalmente inhabilitado">
-      <span class="category-status-badge">Próximamente</span>
-      <span class="icon">📘</span>
-      Consulta Técnica ISO 9001:2015
-    </button>
+    <button class="category-btn" data-ava-cat="consulta">
+        <span class="icon">📘</span>
+        Consulta Técnica ISO 9001:2015
+      </button>
     <button class="category-btn" data-ava-cat="simulador">
       <span class="icon">💡</span>
       Simulador de Auditorías
@@ -92,7 +91,7 @@ export function avaSelectCategory(
 
   const welcomeMap: Record<string, string> = {
     capacitacion: `👋 ¡Hola! Bienvenida a "${CATEGORY_NAMES.capacitacion}".\n\nPara empezar, escribe: "empecemos".`,
-    consulta: `👋 ¡Hola! Aquí puedes resolver dudas sobre ISO 9001:2015.\n\nEscribe tu consulta. Ejemplo: "¿Qué es una no conformidad?".`,
+    consulta: `Bienvenido al modulo de consulta ISO 9001:2015, para comenzar el chat, puedes iniciar saludando a AVA. \n\n Por ejemplo, puedes escribir "Hola AVA" o "Buenos días".`,
     default: `👋 Bienvenida al módulo "${CATEGORY_NAMES[category] ?? category}".Este módulo está diseñado para realizar una preauditoría de tus procesos, que consiste en una simulación de auditoría donde te hare una serie de preguntas relacionadas con el macroproceso que elijas. ¡Empecemos! Selecciona el macroproceso que deseas auditar.(No olvides que si quieres cambiar de categoria debes iniciar un nuevo chat.)`,
   };
 
