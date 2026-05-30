@@ -58,10 +58,9 @@ export function renderAvaWelcomeCards(): string {
       <span class="icon">💡</span>
       Simulador de Auditorías
     </button>
-    <button class="category-btn category-btn-disabled" disabled aria-disabled="true" title="Temporalmente inhabilitado">
-      <span class="category-status-badge">Próximamente</span>
+    <button class="category-btn" data-ava-cat="gestion">
       <span class="icon">📊</span>
-      Gestión de No Conformidades
+      Glosario SGC - ISOLUCION
     </button>
   `;
 }
