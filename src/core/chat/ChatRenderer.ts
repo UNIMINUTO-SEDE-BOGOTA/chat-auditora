@@ -58,7 +58,7 @@ export function renderMessage(message: ChatMessage, labelOverride?: string): voi
   if (message.role === 'user') {
     avatar.textContent = 'TÚ';
   } else {
-    avatar.innerHTML = '<img src="/icon-ava.png" alt="AVA">';
+    avatar.innerHTML = '<img src="/icon-ava.png" alt="EVA">';
   }
 
   const body = document.createElement('div');

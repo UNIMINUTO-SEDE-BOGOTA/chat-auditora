@@ -69,9 +69,9 @@ export function initSplash(onDone: () => void): void {
   content.className = 'splash-content';
   content.innerHTML = `
     <div class="splash-avatar-wrap">
-      <img id="splashAvatar" src="${AVATARS[0]}" alt="AVA">
+      <img id="splashAvatar" src="${AVATARS[0]}" alt="EVA">
     </div>
-    <div class="splash-logo">AVA</div>
+    <div class="splash-logo">EVA</div>
     <div class="splash-subtitle">Asistente Virtual de Apoyo</div>
     <div class="splash-hint">🌠 Toca para saltar 🌠</div>
   `;

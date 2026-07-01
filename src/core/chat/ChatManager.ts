@@ -55,7 +55,7 @@ export function setChatState(chat: Chat, state: ChatState, onSave: () => void): 
 
 // ── Title auto-generation ────────────────────────────────────
 
-const AUTO_TITLES = new Set(['Chat', 'AVA', 'Nuevo chat']);
+const AUTO_TITLES = new Set(['Chat', 'EVA', 'Nuevo chat']);
 
 export function maybeUpdateTitle(chat: Chat, userText: string): void {
   if (!userText || !AUTO_TITLES.has(chat.title)) return;

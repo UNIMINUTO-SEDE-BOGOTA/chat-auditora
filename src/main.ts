@@ -15,19 +15,16 @@ import { initMobileSidebar } from './components/MobileSidebar';
 import { initTour } from './components/Tour';
 import { initSplash } from './components/Splash';
 
-console.log('🚀 Iniciando aplicación...');
+
 
 const app = new App();
 app.init();
-
-console.log('✅ App inicializada');
 
 // ─────────────────────────────────────────────────────────────
 // MEJORAR ICONOS DE CATEGORÍAS
 // ─────────────────────────────────────────────────────────────
 function enhanceCategoryIcons() {
   const categoryBtns = document.querySelectorAll('.category-btn');
-  console.log(`📊 Encontrados ${categoryBtns.length} botones`);
   
   categoryBtns.forEach((btn) => {
     const cat = btn.getAttribute('data-ava-cat');
@@ -51,7 +48,6 @@ function enhanceCategoryIcons() {
     }
   });
   
-  console.log('✅ Iconos mejorados');
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -71,5 +67,3 @@ initSplash(() => {
 });
 
 (window as unknown as Record<string, unknown>).app = app;
-
-console.log('🏁 main.ts ejecutado');

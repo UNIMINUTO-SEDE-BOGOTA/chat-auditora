@@ -31,8 +31,8 @@ const WEBHOOK_AVA_GESTION      = import.meta.env.VITE_WEBHOOK_AVA_GESTION      ?
 export const SERVICES: Record<string, ServiceDefinition> = {
   ava: {
     id: 'ava',
-    name: 'AVA - Agente Virtual de Auditoría',
-    shortName: 'AVA',
+    name: 'EVA - Agente Virtual de Auditoría',
+    shortName: 'EVA',
     icon: '🧠',
     description: 'Capacitación SGC, consultas ISO 9001 y simulador de auditorías',
     webhooks: {

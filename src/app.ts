@@ -305,7 +305,7 @@ export class App {
     this.currentChatId = result.newCurrentId;
     this.pendingDelete = result.pending;
 
-    // FIX: limpia el flag de envío si el chat eliminado estaba procesando
+    // limpia el flag de envío si el chat eliminado estaba procesando
     this.sendingChats.delete(chatId);
 
     this.save();

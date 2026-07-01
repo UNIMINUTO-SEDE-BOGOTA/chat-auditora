@@ -86,13 +86,13 @@ export function avaSelectCategory(
 ): void {
   chat.category = category;
   chat.serviceId = SERVICE_ID;
-  chat.title = CATEGORY_NAMES[category] ?? 'AVA';
+  chat.title = CATEGORY_NAMES[category] ?? 'EVA';
 
   // Mensajes personalizados para cada categoría
   const welcomeMap: Record<string, string> = {
     capacitacion: `👋 ¡Hola! Bienvenida a "${CATEGORY_NAMES.capacitacion}".\n\nPara empezar, escribe: "empecemos".`,
     
-    consulta: `Bienvenido al módulo de consulta ISO 9001:2015, para comenzar el chat, puedes iniciar saludando a AVA. \n\n Por ejemplo, puedes escribir "Hola AVA" o "Buenos días".`,
+    consulta: `Bienvenido al módulo de consulta ISO 9001:2015, para comenzar el chat, puedes iniciar saludando a EVA. \n\n Por ejemplo, puedes escribir "Hola EVA" o "Buenos días".`,
     
     // 🔥 NUEVO MENSAJE PARA GLOSARIO - COMPLETAMENTE DIFERENTE
     gestion: `📖 **¡Bienvenido al Glosario SGC - ISOLUCION!** 📖\n\n━━━\n✨ **Módulo Especial de Consulta Rápida** ✨\n━━━\n\nEste es un espacio dedicado a resolver tus dudas sobre términos del **Sistema de Gestión de Calidad**.\n\n🔍 **¿Cómo funciona?**\n• Escribe cualquier palabra o término que quieras consultar\n• Ejemplo: *"¿Qué es ISO 9001?"* o *"Define No Conformidad"*\n• También puedes preguntar: *"Qué significa PDCA"* o *"Qué es un proceso"*\n\n📚 **Recibirás:**\n• Una definición clara y sencilla\n• Ejemplos aplicados a UNIMINUTO\n• Referencias a la normativa ISO 9001:2015\n• Contexto práctico para tu trabajo diario\n\n💡 **Términos populares para consultar:**\n• Calidad • Proceso • Procedimiento • Indicador\n• No Conformidad • Acción Correctiva • Mejora Continua\n• Ciclo PHVA • Enfoque a procesos • Riesgo y Oportunidad\n\n━━━\n✨ **Para iniciar escribe "Hola" en el chat.** 👇\n━━━`,

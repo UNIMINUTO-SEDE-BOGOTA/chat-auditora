@@ -604,7 +604,7 @@ export const TOUR_HTML = /* html */ `
 
   <!-- Header -->
   <div class="tour-header">
-    <img id="tourAvatar" src="/ava-mascota.png" alt="AVA" />
+    <img id="tourAvatar" src="/ava-mascota.png" alt="EVA" />
     <span id="tourTooltipTitle"></span>
   </div>
 
