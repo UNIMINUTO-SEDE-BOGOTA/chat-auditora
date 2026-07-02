@@ -1,7 +1,5 @@
 /* ============================================================
-   styles/features.css  — AVA Cyberpunk Premium Edition
-   Sidebar mejorado, modo oscuro cyberpunk, elementos neon
-   CORREGIDO: Imagen transparente y botón hamburguesa
+   styles/features.css  — AVA
    ============================================================ */
 
 /* ── Theme toggle button premium ─────────────────────────── */
@@ -283,13 +281,13 @@
 .chats-list {
   flex: 1;
   overflow-y: auto !important;
-  overflow-x: hidden !important;  /* ← ELIMINA SCROLL HORIZONTAL */
+  overflow-x: hidden !important;
   padding: 12px;
   position: relative;
   z-index: 1;
 }
 
-/* Chat items cyberpunk premium */
+/* Chat items */
 .chat-item {
   padding: 12px 14px;
   margin-bottom: 8px;
@@ -425,7 +423,7 @@
 
 /* ── MEJORAS PARA MENSAJES TIPO GLASS ─────────────────────── */
 
-/* Mensajes del asistente con efecto glass mejorado */
+/* Mensajes del asistente con efecto glass*/
 .message.assistant .message-content {
   background: rgba(255, 255, 255, 0.85) !important;
   backdrop-filter: blur(16px) !important;
@@ -1030,4 +1028,122 @@
   background: linear-gradient(135deg, 
     rgba(240, 106, 62, 0.2) 0%,
     rgba(212, 192, 74, 0.2) 100%);
+}
+
+/* ============================================================
+   TARJETAS DE CATEGORÍAS AVA - MISMO TAMAÑO
+   ============================================================ */
+
+/* Contenedor de las tarjetas */
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  width: 100%;
+  padding: 10px 0;
+}
+
+/* Cada tarjeta individual */
+.category-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 24px 16px;
+  min-height: 140px;
+  height: 100%;
+  width: 100%;
+  border-radius: 16px;
+  border: 2px solid var(--border-soft, #e8ecf1);
+  background: var(--bg-surface, #ffffff);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text-main, #1a1a2e);
+  line-height: 1.4;
+  word-break: break-word;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Iconos dentro de las tarjetas */
+.category-btn .icon {
+  font-size: 32px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+/* Texto de las tarjetas */
+.category-btn span:last-child {
+  font-weight: 500;
+  font-size: 14px;
+  max-width: 100%;
+}
+
+/* Efectos hover */
+.category-btn:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-primary, #2d4a7a);
+  box-shadow: 0 8px 28px rgba(225, 94, 41, 0.15);
+  background: rgba(225, 94, 41, 0.05);
+}
+
+.category-btn:active {
+  transform: scale(0.97);
+}
+
+/* Modo oscuro para las tarjetas */
+[data-theme="dark"] .category-btn {
+  background: rgba(15, 26, 15, 0.9);
+  border-color: rgba(0, 255, 0, 0.2);
+  color: #e6f0e6;
+}
+
+[data-theme="dark"] .category-btn:hover {
+  background: rgba(240, 106, 62, 0.1);
+  border-color: var(--color-primary);
+}
+
+/* ── RESPONSIVE ────────────────────────────────────────────── */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .category-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .category-btn {
+    min-height: 120px;
+    padding: 18px 12px;
+  }
+  
+  .category-btn .icon {
+    font-size: 28px;
+  }
+  
+  .category-btn span:last-child {
+    font-size: 13px;
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .category-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .category-btn {
+    min-height: 80px;
+    flex-direction: row;
+    padding: 14px 16px;
+  }
+  
+  .category-btn .icon {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
 }

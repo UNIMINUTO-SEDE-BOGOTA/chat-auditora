@@ -46,22 +46,24 @@ function getWebhook(category: string | null): string {
 
 export function renderAvaWelcomeCards(): string {
   return `
-    <button class="category-btn" data-ava-cat="capacitacion">
-      <span class="icon">🎓</span>
-      <span>Capacitación SGC en UNIMINUTO</span>
-    </button>
-    <button class="category-btn" data-ava-cat="consulta">
-      <span class="icon">🔍</span>
-      <span>Consulta Técnica ISO 9001:2015</span>
-    </button>
-    <button class="category-btn" data-ava-cat="simulador">
-      <span class="icon">🎮</span>
-      <span>Simulador de Auditorías</span>
-    </button>
-    <button class="category-btn" data-ava-cat="gestion">
-      <span class="icon">📖</span>
-      <span>Glosario SGC - ISOLUCION</span>
-    </button>
+    <div class="category-container">
+      <button class="category-btn" data-ava-cat="capacitacion">
+        <span class="icon">🎓</span>
+        <span>Capacitación SGC en UNIMINUTO</span>
+      </button>
+      <button class="category-btn" data-ava-cat="consulta">
+        <span class="icon">🔍</span>
+        <span>Consulta Técnica ISO 9001:2015</span>
+      </button>
+      <button class="category-btn" data-ava-cat="simulador">
+        <span class="icon">🎮</span>
+        <span>Simulador de Auditorías</span>
+      </button>
+      <button class="category-btn" data-ava-cat="gestion">
+        <span class="icon">📖</span>
+        <span>Glosario SGC - ISOLUCION</span>
+      </button>
+    </div>
   `;
 }
 
