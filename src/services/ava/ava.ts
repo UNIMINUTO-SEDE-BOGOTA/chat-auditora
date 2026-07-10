@@ -26,12 +26,84 @@ const CATEGORY_NAMES: Record<string, string> = {
   gestion: '📖 Glosario SGC - ISOLUCION',
 };
 
+// IMPORTANTE: estos nombres deben coincidir EXACTO con los campos
+// `macroproceso` y `proceso` que quedan en Supabase (ver MAPA_PROCESOS
+// del workflow n8n de ingesta). Si cambias un nombre aquí sin cambiarlo
+// allá, el filtro del RAG no va a encontrar los chunks correctos.
 const PROCESOS: Record<string, string[]> = {
-  'Docencia': ['Enseñanza, Aprendizaje y Evaluación', 'Vida Estudiantil'],
-  'Investigación': ['Investigación Formativa', 'Transferencia de Conocimiento y Tecnología'],
-  'Proyección Social': ['Educación Continua'],
-  'Gestión Administrativa y Financiera': ['Gestión de Ingresos', 'Aprovisionamiento'],
-  'Gestión de Mercadeo y Posicionamiento': ['Comercialización y Ventas'],
+  'Docencia': [
+    'Enseñanza, Aprendizaje y Evaluación',
+    'Vida Estudiantil',
+    'Desarrollo Curricular',
+  ],
+  'Investigación': [
+    'Investigación Formativa',
+    'I+D+I+C',
+    'Gestión Editorial',
+    'Transferencia de Conocimiento y Tecnología',
+  ],
+  'Proyección Social': [
+    'Educación Continua',
+    'Gestión de Empleabilidad',
+    'Práctica Profesional',
+    'Práctica en Responsabilidad Social',
+    'Voluntariado',
+    'Relacionamiento con Egresados',
+    'Articulación',
+    'Gestión y Desarrollo del Emprendimiento',
+  ],
+  'Gestión Administrativa y Financiera': [
+    'Gestión de Ingresos',
+    'Planeación Financiera y Presupuesto',
+    'Contabilidad Financiera y Costeo',
+    'Aprovisionamiento',
+    'Administración de Tesorería',
+    'Gestión Documental',
+    'Gestión Académico Administrativo',
+  ],
+  'Gestión de Mercadeo y Posicionamiento': [
+    'Investigación de Mercados',
+    'Comercialización y Ventas',
+  ],
+  'Bienestar Institucional E Identidad Misional': [
+    'Desarrollo Y Fortalecimiento Del Bienestar Institucional',
+    'Pastoral',
+  ],
+  'Calidad Integral': [
+    'Gestión Del Registro Calificado',
+    'Gestión De La Experiencia Del Usuario',
+    'Aseguramiento De La Calidad De Los Procesos',
+    'Aseguramiento De La Calidad Académica',
+  ],
+  'Desarrollo Integral del Talento Humano': [
+    'Cultura Del Desempeño',
+    'Atracción, Selección Y OnBoarding',
+    'Contratación Y Nómina',
+    'Diseño Organizacional Y Compensación',
+    'Desarrollo Y Sucesión',
+    'Gestión Del Conocimiento Corporativo',
+    'Seguridad, Salud En El Trabajo Y Gestión Ambiental',
+  ],
+  'Direccionamiento': [
+    'Direccionamiento Estratégico',
+    'Gestión De La Información',
+    'Gestión De Proyectos',
+  ],
+  'Gestión De La Infraestructura Fisica Y Tecnologica': [
+    'Construcción, Adecuación Y Mantenimiento De La Infraestructura Física',
+  ],
+  'Gestión De La Planeación Y Control': [
+    'Gestión De Riesgos Y Oportunidades',
+  ],
+  'Gestión Jurídica': [
+    'Asesoría Y Apoyo Jurídico',
+    'Asuntos Judiciales Y Administrativos',
+  ],
+  'Relaciones Interinstitucionales': [
+    'Alianzas Estratégicas',
+    'Asuntos Globales',
+    'Comunicaciones Corporativas',
+  ],
 };
 
 // ── Helpers ───────────────────────────────────────────────────
@@ -162,7 +234,15 @@ function getProcessIcon(macro: string): string {
     'Investigación': '🔬',
     'Proyección Social': '🤝',
     'Gestión Administrativa y Financiera': '📊',
-    'Gestión de Mercadeo y Posicionamiento': '📢'
+    'Gestión de Mercadeo y Posicionamiento': '📢',
+    'Bienestar Institucional E Identidad Misional': '🌱',
+    'Calidad Integral': '✅',
+    'Desarrollo Integral del Talento Humano': '👥',
+    'Direccionamiento': '🧭',
+    'Gestión De La Infraestructura Fisica Y Tecnologica': '🏗️',
+    'Gestión De La Planeación Y Control': '🎯',
+    'Gestión Jurídica': '⚖️',
+    'Relaciones Interinstitucionales': '🌐',
   };
   return icons[macro] || '📌';
 }
